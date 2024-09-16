@@ -25,12 +25,12 @@ The project uses the [ContestHub-backend](https://github.com/AnanteshG/ContestHu
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/AnanteshG/
+   git clone https://github.com/AnanteshG/Contest-Hub
    ```
 
 2. **Navigate to Project Directory**
    ```bash
-   cd
+   cd Contest-Hub
    ```
 3. **Install dependencies**
 
