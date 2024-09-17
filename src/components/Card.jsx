@@ -58,10 +58,10 @@ function Card({ platform, title, url, startTime, duration, isVisible }) {
 
         switch (calendarType) {
             case 'google':
-                calendarUrl = `https://calendar.google.com/calendar/r/eventedit?text=${encodeURIComponent(platform + ' - ' +title)}&dates=${startDate}/${endDate}&details=${encodeURIComponent('Find more info at ' + url)}&location=Online&sf=true&output=xml`;
+                calendarUrl = `https://calendar.google.com/calendar/r/eventedit?text=${encodeURIComponent(platform + ' - ' + title)}&dates=${startDate}/${endDate}&details=${encodeURIComponent('Find more info at ' + url)}&location=Online&sf=true&output=xml`;
                 break;
             case 'outlook':
-                calendarUrl = `https://outlook.live.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(platform + ' - ' +title)}&startdt=${contestStartTime.toISOString()}&enddt=${contestEndTime.toISOString()}&body=${encodeURIComponent('Find more info at ' + url)}&location=Online`;
+                calendarUrl = `https://outlook.live.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(platform + ' - ' + title)}&startdt=${contestStartTime.toISOString()}&enddt=${contestEndTime.toISOString()}&body=${encodeURIComponent('Find more info at ' + url)}&location=Online`;
                 break;
             case 'apple': {
                 const icsContent = `
@@ -70,7 +70,7 @@ function Card({ platform, title, url, startTime, duration, isVisible }) {
                     BEGIN:VEVENT
                     DTSTART:${startDate}
                     DTEND:${endDate}
-                    SUMMARY:${platform + ' - ' +title}
+                    SUMMARY:${platform + ' - ' + title}
                     DESCRIPTION:Find more info at ${url}
                     LOCATION:Online
                     END:VEVENT
@@ -79,7 +79,7 @@ function Card({ platform, title, url, startTime, duration, isVisible }) {
                 const blob = new Blob([icsContent], { type: 'text/calendar' });
                 const link = document.createElement('a');
                 link.href = URL.createObjectURL(blob);
-                link.download = `${platform + ' contest - ' +title}.ics`;
+                link.download = `${platform + ' contest - ' + title}.ics`;
                 link.click();
                 return;
             }
@@ -110,7 +110,7 @@ function Card({ platform, title, url, startTime, duration, isVisible }) {
                     <div className="relative inline-flex items-center text-sm border hover:bg-gray-700 hover:text-white cursor-pointer" onClick={() => setCalendarDropdown(!calendarDropdown)}>
                         {/* dropdown of calendar options */}
                         <div className="px-1">Add to Calendar</div>
-                        <div className={`absolute top-6 w-full bg-gray-800 ${calendarDropdown? '' : 'hidden'}`}>
+                        <div className={`absolute top-6 w-full bg-gray-800 ${calendarDropdown ? '' : 'hidden'}`}>
                             <div className="flex flex-col">
                                 {calendarOptions.map(option => (
                                     // onClick event for each option by passing the option to the function handleAddToCal

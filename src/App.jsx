@@ -8,7 +8,7 @@ function App() {
   const [contests, setContests] = useState([])
   const [selectedPlatforms, setSelectedPlatforms] = useState({})
 
-  const platforms = ["CodeChef", "Codeforces", "GeeksforGeeks", "LeetCode"]
+  const platforms = ["CodeChef", "Codeforces", "GeeksforGeeks", "LeetCode", "HackerEarth"]
 
   const url = import.meta.env.VITE_API_URL
 
