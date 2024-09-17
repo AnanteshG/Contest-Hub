@@ -2,6 +2,7 @@ import CodeChef from "../assets/codechef.png";
 import Codeforces from "../assets/codeforces.png";
 import GeeksforGeeks from "../assets/geeksforgeeks.png";
 import LeetCode from "../assets/leetcode.png";
+import HackerEarth from "../assets/hackerearth.png";
 
 function formatDate(isoFormatStr) {
   const date = new Date(isoFormatStr);
@@ -55,19 +56,17 @@ function formatDate(isoFormatStr) {
 function formatSeconds(_seconds, includeSeconds = false) {
   const days = Math.floor(_seconds / (3600 * 24));
   _seconds = _seconds % (3600 * 24);
-  const hours = _seconds / 3600;
+  const hours = Math.floor(_seconds / 3600);
   _seconds = _seconds % 3600;
-  const minutes = _seconds / 60;
+  const minutes = Math.floor(_seconds / 60);
   const seconds = _seconds % 60;
 
   return `${
     days >= 1 ? days.toString() + (days > 1 ? " days, " : " day, ") : ""
-  }${Math.floor(hours).toString().padStart(2, "0")} : ${Math.floor(minutes)
+  }${hours.toString().padStart(2, "0")} : ${minutes
     .toString()
     .padStart(2, "0")}${
-    includeSeconds
-      ? " : " + Math.floor(seconds).toString().padStart(2, "0")
-      : ""
+    includeSeconds ? " : " + seconds.toString().padStart(2, "0") : ""
   }`;
 }
 
@@ -77,11 +76,13 @@ function compareDates(first, second) {
   return firstDate - secondDate;
 }
 
+// Ensure that platformIcons contains all platforms
 const platformIcons = {
   CodeChef: CodeChef,
   Codeforces: Codeforces,
   GeeksforGeeks: GeeksforGeeks,
   LeetCode: LeetCode,
+  HackerEarth: HackerEarth, // Adding missing platform icon
 };
 
 export { formatDate, formatSeconds, compareDates, platformIcons };
