@@ -3,6 +3,7 @@ import Codeforces from "../assets/codeforces.png";
 import GeeksforGeeks from "../assets/geeksforgeeks.png";
 import LeetCode from "../assets/leetcode.png";
 import HackerEarth from "../assets/hackerearth.png";
+import AtCoder from "../assets/atcoder.png";
 
 function formatDate(isoFormatStr) {
   const date = new Date(isoFormatStr);
@@ -83,6 +84,7 @@ const platformIcons = {
   GeeksforGeeks: GeeksforGeeks,
   LeetCode: LeetCode,
   HackerEarth: HackerEarth, // Adding missing platform icon
+  AtCoder: AtCoder,
 };
 
 export { formatDate, formatSeconds, compareDates, platformIcons };
