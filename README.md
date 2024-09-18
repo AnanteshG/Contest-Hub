@@ -2,7 +2,7 @@
 
 ## Overview
 
-ContestHub fetches upcoming and ongoing programming contests from multiple platforms including CodeChef, Codeforces, GeeksforGeeks, and LeetCode. It consolidates this information into a structured format and saves it as JSON files for easy access and further use. The project uses a backend repository for data storage and employs DevOps CI for automation.
+ContestHub fetches upcoming and ongoing programming contests from multiple platforms including CodeChef, Codeforces, AtCoders, HackerEarth, GeeksforGeeks, and LeetCode. It consolidates this information into a structured format and saves it as JSON files for easy access and further use. The project uses a backend repository for data storage and employs DevOps CI for automation.
 
 ## Features
 
@@ -11,6 +11,8 @@ ContestHub fetches upcoming and ongoing programming contests from multiple platf
   - **Codeforces**
   - **GeeksforGeeks**
   - **LeetCode**
+  - **HackerEarth**
+  - **AtCoders**
 - Stores the contest data in JSON format.
 - Includes details such as contest title, start time, duration, and URL.
 - Integrates with [ContestHub-backend](https://github.com/AnanteshG/ContestHub-backend) for data storage.
